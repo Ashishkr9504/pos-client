@@ -39,7 +39,7 @@ const ItemPage = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      await axios.post(`${window.location.origin}/api/items/delete-item`, {
+      await axios.post("https://pos-appserver.vercel.app/api/items/delete-item", {
         itemId: record._id,
       });
       message.success("Item deleted successfully");
@@ -95,7 +95,7 @@ const ItemPage = () => {
         dispatch({
           type: "SHOW_LOADING",
         });
-        await axios.post(`${window.location.origin}/api/items/add-item`, value);
+        await axios.post("https://pos-appserver.vercel.app/api/items/add-item", value);
         message.success("Item added successfully");
         getAllItems();
         setPopupModal(false);
@@ -114,7 +114,7 @@ const ItemPage = () => {
         dispatch({
           type: "SHOW_LOADING",
         });
-        await axios.put(`${window.location.origin}/api/items/edit-item`, {
+        await axios.put("https://pos-appserver.vercel.app/api/items/edit-item", {
           ...value,
           itemId: editItem._id,
         });
