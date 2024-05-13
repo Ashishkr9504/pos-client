@@ -6,45 +6,15 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import BillsPage from "./pages/BillsPage";
 
-
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute>
-                <Homepage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/items"
-            element={
-              <ProtectedRoute>
-                <ItemPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/cart"
-            element={
-              <ProtectedRoute>
-                <CartPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/bills"
-            element={
-              <ProtectedRoute>
-                <BillsPage />
-              </ProtectedRoute>
-            }
-          />
-          
+          <Route path="/" element={<Homepage />} />
+          <Route path="/items" element={<ItemPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/bills" element={<BillsPage />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
